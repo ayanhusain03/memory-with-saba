@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#0f0f14" />
+    <meta name="description" content="Happy Birthday Saba 💖" />
+    <title>Happy Birthday, Saba 💖</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- GSAP -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      defer
+    ></script>
+
+    <!-- canvas-confetti -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"
+      defer
+    ></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Floating Music Toggle -->
+    <button class="music-btn" id="musicBtn" aria-label="Toggle music">
+      <span class="music-icon">♪</span>
+      <span class="music-label">Music</span>
+    </button>
+
+    <!-- Heart Particles -->
+    <div class="hearts-container" id="heartsContainer" aria-hidden="true"></div>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="hero">
+      <div class="hero__inner">
+        <p class="hero__pre" id="heroPre">— for you, always —</p>
+        <h1 class="hero__title" id="heroTitle">
+          <span class="hero__line">Happy Birthday</span>
+          <span class="hero__line hero__line--accent"
+            >My Love, Saba <span class="heart-emoji">💖</span></span
+          >
+        </h1>
+        <p class="hero__sub" id="heroSub">
+          Today the universe pauses, just for you.
+        </p>
+        <button class="hero__cta" id="heroCta">
+          <span>Click for a Surprise</span>
+          <span class="cta-icon">🎁</span>
+          <span class="ripple-ring"></span>
+        </button>
+      </div>
+      <div class="hero__scroll-hint" id="heroScroll">
+        <span></span>
+      </div>
+    </section>
+
+    <!-- ===== LOVE LETTER SECTION ===== -->
+    <section class="letter" id="letter">
+      <div class="letter__card glass-card">
+        <div class="letter__icon">✉️</div>
+        <h2 class="letter__heading">A Letter From My Heart</h2>
+        <p class="letter__text" id="letterText"></p>
+        <span class="letter__cursor" id="letterCursor">|</span>
+      </div>
+    </section>
+
+    <!-- ===== TIMELINE SECTION ===== -->
+    <section class="timeline" id="timeline">
+      <div class="section-label">Our Story</div>
+      <h2 class="section-heading">Every Chapter With You</h2>
+      <div class="timeline__line"></div>
+      <div class="timeline__items">
+        <div class="timeline__item timeline__item--left" data-index="0">
+          <div class="timeline__card glass-card">
+            <span class="timeline__emoji">✨</span>
+            <h3>The first day we talk</h3>
+            <p>
+              The day when we talked for the first time that was the most
+              beautiful beginning of my every journey, I was so Happy after
+              talking to you .
+            </p>
+          </div>
+          <div class="timeline__dot"></div>
+        </div>
+
+        <div class="timeline__item timeline__item--right" data-index="1">
+          <div class="timeline__card glass-card">
+            <span class="timeline__emoji">💬</span>
+            <h3>Late Night Conversations</h3>
+            <p>
+              That first night, when we stayed up talking to each other until
+              the world grew quiet, became one of the most beautiful nights of
+              my life. Every word felt special, every moment felt timeless—and
+              it’s a memory I know I’ll carry with me foreve.
+            </p>
+          </div>
+          <div class="timeline__dot"></div>
+        </div>
+
+        <div class="timeline__item timeline__item--left" data-index="2">
+          <div class="timeline__card glass-card">
+            <span class="timeline__emoji">🌙</span>
+            <h3>When I Realized I Was Falling in Love with You</h3>
+            <p>
+              It wasn’t a sudden moment, but a quiet feeling that grew with
+              time. I found myself thinking about you, smiling without reason,
+              and waiting for your words. And then I realized… I was falling in
+              love with you. ❤️
+            </p>
+          </div>
+          <div class="timeline__dot"></div>
+        </div>
+
+        <div class="timeline__item timeline__item--right" data-index="3">
+          <div class="timeline__card glass-card">
+            <span class="timeline__emoji">🌸</span>
+            <h3>Growing Together</h3>
+            <p>
+              Through every season, every mood, every ordinary and extraordinary
+              moment — you make it all feel like a beautiful story worth living.
+            </p>
+          </div>
+          <div class="timeline__dot"></div>
+        </div>
+
+        <div class="timeline__item timeline__item--left" data-index="4">
+          <div class="timeline__card glass-card">
+            <span class="timeline__emoji">💖</span>
+            <h3>Today & Always</h3>
+            <p>
+              Today is yours. And so am I — completely, endlessly, without
+              hesitation. Happy birthday, my love.
+            </p>
+          </div>
+          <div class="timeline__dot"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== POLAROID GALLERY ===== -->
+    <section class="gallery" id="gallery">
+      <div class="section-label">Our Moments</div>
+      <h2 class="section-heading">Memories I Hold Close</h2>
+      <div class="gallery__grid">
+        <div class="polaroid" style="--rot: -3deg; --delay: 0s">
+          <div class="polaroid__img-wrap">
+            <img
+              src="/test1/firstpost.jpeg"
+              alt="Cozy evening"
+              loading="lazy"
+              width="400"
+              height="400"
+            />
+          </div>
+          <p class="polaroid__caption">The first post for me 🕯️</p>
+        </div>
+
+        <div class="polaroid" style="--rot: 2deg; --delay: 0.1s">
+          <div class="polaroid__img-wrap">
+            <img
+              src="/test1/onlinenikah.jpeg"
+              alt="Sunrise together"
+              loading="lazy"
+              width="400"
+              height="400"
+            />
+          </div>
+          <p class="polaroid__caption">Our online Nikaah☀️</p>
+        </div>
+
+        <div class="polaroid" style="--rot: -1.5deg; --delay: 0.2s">
+          <div class="polaroid__img-wrap">
+            <img
+              src="/test1/promise.jpeg"
+              alt="Flowers"
+              loading="lazy"
+              width="400"
+              height="400"
+            />
+          </div>
+          <p class="polaroid__caption">Out beautiful agreement 🌸</p>
+        </div>
+
+        <div class="polaroid" style="--rot: 3deg; --delay: 0.3s">
+          <div class="polaroid__img-wrap">
+            <img
+              src="/test1/HandwrittenNode.jpeg"
+              alt="Stars"
+              loading="lazy"
+              width="400"
+              height="400"
+            />
+          </div>
+          <p class="polaroid__caption">First handWritten note🌟</p>
+        </div>
+
+        <div class="polaroid" style="--rot: -2deg; --delay: 0.4s">
+          <div class="polaroid__img-wrap">
+            <img
+              src="/test1/Longhourtalk.jpeg"
+              alt="Warmth"
+              loading="lazy"
+              width="400"
+              height="400"
+            />
+          </div>
+          <p class="polaroid__caption">Hours feel minutes when we talk 🫧</p>
+        </div>
+
+        <div class="polaroid" style="--rot: 1.5deg; --delay: 0.5s">
+          <div class="polaroid__img-wrap">
+            <img
+              src="/test1/gift.jpeg"
+              alt="Light"
+              loading="lazy"
+              width="400"
+              height="400"
+            />
+          </div>
+          <p class="polaroid__caption">
+            First and most beautiful gift from the most beautiful person ✨
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== REASONS SECTION ===== -->
+    <section class="reasons" id="reasons">
+      <div class="section-label">For You</div>
+      <h2 class="section-heading">Why I Love You</h2>
+      <div class="reasons__card glass-card">
+        <div class="reasons__reason" id="reasonText">
+          <p>Press the button to find out...</p>
+        </div>
+        <div class="reasons__sparkles" id="sparkles" aria-hidden="true"></div>
+      </div>
+      <button class="reasons__btn" id="reasonBtn">
+        <span>A Reason 💫</span>
+      </button>
+    </section>
+
+    <!-- ===== FINAL CINEMATIC SECTION ===== -->
+    <section class="finale" id="finale">
+      <div class="finale__glow" aria-hidden="true"></div>
+      <canvas class="finale__canvas" id="confettiCanvas"></canvas>
+      <div class="finale__inner">
+        <p class="finale__line" data-finale="0">On this day you were born,</p>
+        <p class="finale__line" data-finale="1">
+          the world became a little more beautiful.
+        </p>
+        <p class="finale__line" data-finale="2">
+          And I became a little more certain —
+        </p>
+        <p class="finale__line" data-finale="3">that love like ours</p>
+        <p class="finale__line" data-finale="4">is the rarest gift of all.</p>
+        <div class="finale__divider"></div>
+        <p class="finale__closing" id="finaleClosing">Until we finally meet.</p>
+        <p class="finale__signature">— Always yours 💖</p>
+      </div>
+    </section>
+
+    <!-- Hidden audio element. Drop your MP3 (or other compatible file)
+         into the test1 folder and update the <source> below. If loading or
+         playback fails, the JavaScript will fall back to a gentle generated
+         tune so you still hear music. -->
+    <audio id="bgMusic" loop preload="auto">
+      <source src="/test1/mp3 for web.mp3" type="audio/mpeg" />
+      <!-- Example: change "soft-lovely-tune.mp3" to your track's filename. -->
+    </audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
